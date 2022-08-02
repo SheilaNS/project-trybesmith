@@ -11,6 +11,11 @@ const prodService = {
     };
     return newProd;
   },
+
+  list: async (): Promise<Product[]> => {
+    const result = await prodModel.list();
+    return result as Product[];
+  },
 };
 
 export default prodService;
