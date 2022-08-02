@@ -6,8 +6,7 @@ const prodService = {
     const { insertId } = await prodModel.add(prod);
     const newProd = {
       id: insertId,
-      name: prod.name,
-      amount: prod.amount,
+      ...prod,
     };
     return newProd;
   },
